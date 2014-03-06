@@ -61,6 +61,24 @@ namespace Essential.ServiceModel.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Object with id [{0}] was not found..
+        /// </summary>
+        internal static string NotFoundFailure {
+            get {
+                return ResourceManager.GetString("NotFoundFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} with id [{1}] was not found..
+        /// </summary>
+        internal static string NotFoundFailureOfT {
+            get {
+                return ResourceManager.GetString("NotFoundFailureOfT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Some validation errors occured..
         /// </summary>
         internal static string ValidationFailure {

@@ -76,15 +76,8 @@ namespace Essential.ServiceModel.Infrastructure
         {
             var failure = new Error(exception);
             var chain = _chainBuilder.Build(typeof (Error));
-            try
-            {
-                chain.Do(_response);
-                return chain.React(failure);
-            }
-            catch (Exception ex)
-            {
-                throw new ResponseHandlerException(typeof(Error), "Response handler for ExceptionFailure threw an exception.", ex);
-            }
+            chain.Do(_response);
+            return chain.React(failure);
         }
     }
 }

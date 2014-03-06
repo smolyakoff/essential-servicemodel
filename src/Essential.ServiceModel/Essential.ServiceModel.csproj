@@ -44,9 +44,9 @@
     <Compile Include="Error.cs" />
     <Compile Include="Infrastructure\IResponseHandler.cs" />
     <Compile Include="Infrastructure\IResponseMap.cs" />
-    <Compile Include="Infrastructure\ResponseHandlerException.cs" />
     <Compile Include="Infrastructure\ResponseMap.cs" />
     <Compile Include="Failure.cs" />
+    <Compile Include="Infrastructure\ReactionUndefinedException.cs" />
     <Compile Include="Invalid.cs" />
     <Compile Include="NotFound%271.cs" />
     <Compile Include="NotFound.cs" />
@@ -63,6 +63,12 @@
     <Compile Include="Infrastructure\ResponseHandlerChain.cs" />
     <Compile Include="Infrastructure\ResponseHandlerChainBuilder.cs" />
     <Compile Include="Infrastructure\ResponseMap%272.cs" />
+    <Compile Include="Success.cs" />
+    <Compile Include="Validation\Conditions\Condition.cs" />
+    <Compile Include="Validation\Conditions\ConditionExtension.cs" />
+    <Compile Include="Validation\Conditions\GenericConditionExtensions.cs" />
+    <Compile Include="Validation\Conditions\StringConditionExtensions.cs" />
+    <Compile Include="Validation\Faults\OutOfRangeParameterFault.cs" />
     <Compile Include="Validation\Faults\ParameterFault.cs" />
     <Compile Include="Validation\Faults\RequiredParameterFault.cs" />
     <Compile Include="Validation\InvalidFailureBuilder.cs" />
@@ -84,6 +90,7 @@
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

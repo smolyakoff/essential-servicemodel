@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+@model List<Essential.ServiceModel.Examples.Mvc.Domain.Sales.ProductModel>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Products</title>
+    </head>
+    <body>
+        <section id="products">
+            <ul>
+                @foreach (var product in Model)
+                {
+                    <li>@product.Title - @product.Price.ToString("C0")</li>
+                }
+            </ul>
+            @Html.ActionLink("Create Product", "CreateView", "Products")
+        </section>
+    </body>
+</html>

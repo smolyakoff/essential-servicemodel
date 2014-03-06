@@ -1,4 +1,6 @@
-﻿namespace Essential.ServiceModel
+﻿using Essential.ServiceModel.Resources;
+
+namespace Essential.ServiceModel
 {
     public class NotFound : Failure
     {
@@ -10,7 +12,7 @@
         {
         }
 
-        public NotFound(object id) : base("Object with id [{0}] was not found.", id)
+        public NotFound(object id) : base(Messages.NotFoundFailure, id)
         {
         }
     }

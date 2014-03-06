@@ -1,7 +1,7 @@
 ﻿namespace Essential.ServiceModel
 {
-    public abstract class Data : Response
+    public abstract class Data : Success
     {
-        public abstract object Get();
+        public abstract object GetValue();
     }
 }

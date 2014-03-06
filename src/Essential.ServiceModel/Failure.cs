@@ -14,11 +14,6 @@
             _message = string.Format(messageFormat, formatParameters);
         }
 
-        public override bool IsSuccess
-        {
-            get { return false; }
-        }
-
         public virtual string Message
         {
             get { return _message; }

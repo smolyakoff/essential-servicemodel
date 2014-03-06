@@ -123,6 +123,9 @@
   <data name="Invalid" xml:space="preserve">
     <value>'{0}' is invalid.</value>
   </data>
+  <data name="OutOfRange" xml:space="preserve">
+    <value>'{0}' is out of range.</value>
+  </data>
   <data name="Required" xml:space="preserve">
     <value>'{0}' is required.</value>
   </data>

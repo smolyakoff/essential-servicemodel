@@ -41,6 +41,12 @@ namespace Essential.ServiceModel.Infrastructure
             return this;
         }
 
+        public IResponseMap<TResponse, TResult> DoNothing()
+        {
+            _doAction = null;
+            return this;
+        }
+
         public IResponseHandler<TResult> React(Func<TResponse, TResult> action)
         {
             _reactAction = action;
@@ -52,13 +58,12 @@ namespace Essential.ServiceModel.Infrastructure
             return _handler.On<TResponse1>();
         }
 
-        public TResult Execute()
-        {
-            return _handler.Execute();
-        }
-
         internal override Action<dynamic> Do()
         {
+            if (_doAction == null)
+            {
+                return d => {};
+            }
             return d => _doAction((TResponse) d);
         }
 

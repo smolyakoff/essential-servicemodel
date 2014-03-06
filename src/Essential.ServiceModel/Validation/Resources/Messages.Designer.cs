@@ -79,6 +79,15 @@ namespace Essential.ServiceModel.Validation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; is out of range..
+        /// </summary>
+        internal static string OutOfRange {
+            get {
+                return ResourceManager.GetString("OutOfRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &apos;{0}&apos; is required..
         /// </summary>
         internal static string Required {

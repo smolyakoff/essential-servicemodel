@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Essential.ServiceModel.Validation.Faults;
 
 namespace Essential.ServiceModel.Validation
@@ -24,9 +26,26 @@ namespace Essential.ServiceModel.Validation
             get { return _name; }
         }
 
+        public InvalidFailureBuilder Required(Func<bool> condition, string message = null)
+        {
+            return condition() ? Required(message) : this;
+        }
+
         public InvalidFailureBuilder Required(string message = null)
         {
             var fault = new RequiredParameterFault(Name, message);
+            _faults.Add(fault);
+            return this;
+        }
+
+        public InvalidFailureBuilder OutOfRange(Func<bool> condition, string message = null)
+        {
+            return condition() ? OutOfRange(message) : this;
+        }
+
+        public InvalidFailureBuilder OutOfRange(string message = null)
+        {
+            var fault = new OutOfRangeParameterFault(Name, message);
             _faults.Add(fault);
             return this;
         }
@@ -36,9 +55,11 @@ namespace Essential.ServiceModel.Validation
             return new InvalidFailureBuilder(name, _faults);
         }
 
-        public Invalid Response(string message)
+        public Invalid InvalidOrNull(string message)
         {
-            return new Invalid(message, _faults.ToArray());
+            return !_faults.Any() 
+                ? null 
+                : new Invalid(message, _faults.ToArray());
         }
     }
 }

@@ -14,7 +14,7 @@
             get { return _value; }
         }
 
-        public override object Get()
+        public override object GetValue()
         {
             return _value;
         }

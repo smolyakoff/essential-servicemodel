@@ -1,12 +1,15 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using Essential.ServiceModel.Infrastructure;
 
 namespace Essential.ServiceModel.Web.Mvc
 {
     public class MvcResponseHandler : ResponseHandler<ActionResult>
     {
-        public MvcResponseHandler(IResponse response, Controller controller) : base(response)
+        internal MvcResponseHandler(Response response, Controller controller,
+            Action<MvcResponseHandler, Controller> configuration) : base(response)
         {
+            configuration(this, controller);
         }
     }
 }

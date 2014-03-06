@@ -1,4 +1,5 @@
 ﻿using System;
+using Essential.ServiceModel.Resources;
 
 namespace Essential.ServiceModel
 {
@@ -8,7 +9,7 @@ namespace Essential.ServiceModel
         {
         }
 
-        public NotFound(object id) : base("{0} with id [{1}] was not found.", typeof(T).Name, id)
+        public NotFound(object id) : base(Messages.NotFoundFailureOfT, typeof(T).Name, id)
         {
         }
 

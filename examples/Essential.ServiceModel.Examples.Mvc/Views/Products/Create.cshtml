@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+@model Essential.ServiceModel.Examples.Mvc.Domain.Sales.CreateProductCommand
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create Product</title>
+</head>
+<body>
+    <section>
+        @using (Html.BeginForm("Create", "Products"))
+        {
+            <div>
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title)
+                @Html.ValidationMessageFor(m => m.Title)
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Price)
+                @Html.TextBoxFor(m => m.Price)
+                @Html.ValidationMessageFor(m => m.Price)
+            </div>
+            <input type="submit" value="Create"/>
+        }
+    </section>
+</body>
+</html>
