@@ -29,6 +29,7 @@ namespace Essential.ServiceModel.Web.Mvc
         {
             foreach (var fault in invalid.Faults.OfType<ParameterFault>())
             {
+                _controller.ModelState.Clear();
                 _controller.ModelState.AddModelError(fault.Name, fault.Message);
             }
         }

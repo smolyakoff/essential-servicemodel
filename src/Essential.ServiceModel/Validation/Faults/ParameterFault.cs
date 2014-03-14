@@ -1,4 +1,5 @@
-﻿using Essential.ServiceModel.Validation.Resources;
+﻿using System.ComponentModel.DataAnnotations;
+using Essential.ServiceModel.Validation.Resources;
 
 namespace Essential.ServiceModel.Validation.Faults
 {

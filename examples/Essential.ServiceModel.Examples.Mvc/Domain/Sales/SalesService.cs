@@ -19,12 +19,13 @@ namespace Essential.ServiceModel.Examples.Mvc.Domain.Sales
             var productModels = Mapper.Map<List<ProductModel>>(Products);
             return new Data<List<ProductModel>>(productModels);
         }
-
+ 
         public Response CreateProduct(CreateProductCommand command)
         {
             var invalid = ValidationFault.For("Name").Required(command.Title.Condition().Empty(), "The product should have a name.")
                 .For("Price").OutOfRange(() => command.Price <= 0, "The price should be greater than zero.")
                 .InvalidOrNull("Invalid command parameters");
+
             if (invalid != null)
             {
                 return invalid;

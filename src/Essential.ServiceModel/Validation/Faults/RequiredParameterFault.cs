@@ -1,4 +1,6 @@
-﻿using Essential.ServiceModel.Validation.Resources;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization.Formatters;
+using Essential.ServiceModel.Validation.Resources;
 
 namespace Essential.ServiceModel.Validation.Faults
 {
@@ -6,7 +8,7 @@ namespace Essential.ServiceModel.Validation.Faults
     public class RequiredParameterFault : ParameterFault
     {
         public RequiredParameterFault(string name, string message) : base(name, message)
-        {
+        {     
         }
 
         public RequiredParameterFault(string name) : base(name)

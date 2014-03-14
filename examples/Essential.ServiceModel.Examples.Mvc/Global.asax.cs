@@ -1,4 +1,5 @@
 ﻿using System;
+using Essential.ServiceModel.Examples.Mvc.App_Start;
 
 namespace Essential.ServiceModel.Examples.Mvc
 {
@@ -7,8 +8,11 @@ namespace Essential.ServiceModel.Examples.Mvc
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            MapperConfig.Configure();
+            BundleConfig.RegisterBundles();
             RouteConfig.RegisterRoutes();
+
+            MapperConfig.Configure();
+            
         }
     }
 }
